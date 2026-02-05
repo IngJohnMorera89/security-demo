@@ -1,0 +1,45 @@
+###
+GET http://localhost:8080/api/users
+
+###
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+    "username": "jmorera",
+    "password": "jmorera12345",
+    "email": "john@email.com",
+    "name": "John Morera",
+    "roles":[
+        "admin",
+        "user"
+    ]
+
+
+}
+
+###
+PUT http://localhost:8080/api/users/jmorera
+Content-Type: application/json
+
+{
+    "username": "jmorera",
+    "email": "john@email.com",
+    "name": "John Morera",
+    "roles":[
+        "admin",
+        "user"
+    ]
+
+
+}
+
+###
+
+PATCH http://localhost:8080/api/users/jmorera/active
+
+###
+
+PATCH http://localhost:8080/api/users/jmorera/deactive
+
+
