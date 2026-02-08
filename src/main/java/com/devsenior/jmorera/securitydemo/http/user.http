@@ -1,5 +1,6 @@
 ###
 GET http://localhost:8080/api/users
+Authorization: Basic Jamorera:SW5nZTA5MjU=
 
 ###
 POST http://localhost:8080/api/users
