@@ -1,5 +1,6 @@
 package com.devsenior.jmorera.securitydemo.util;
 
+
 import java.util.Date;
 import java.util.Map;
 import java.util.function.Function;
@@ -14,7 +15,8 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 
-@Component
+
+  @Component
 public class JwtUtils {
 
     @Value("${jwt.secret}")
@@ -58,4 +60,9 @@ public class JwtUtils {
         var keyBytes = Decoders.BASE64.decode(secret);
         return Keys.hmacShaKeyFor(keyBytes);
     }
+
 }
+
+    
+
+   

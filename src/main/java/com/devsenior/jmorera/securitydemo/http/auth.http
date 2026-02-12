@@ -1,13 +1,9 @@
-###
 
-GET http://localhost:8080/api/auth
-
-###
 POST http://localhost:8080/auth/register
 Content-Type: application/json
 
 {
-    "username": "Jamorera",
+    "username": "Jmorera",
     "password" : "SW5nZTA5MjU=",
     "email": "johnmorera@email.com",
     "name": "John Morera Barrera"
@@ -18,7 +14,7 @@ POST http://localhost:8080/auth/login
 Content-Type: application/json
 
 {
-    "username": "Jamorera",
+    "username": "Jmorera",
     "password" : "SW5nZTA5MjU="
    
 }
