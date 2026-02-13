@@ -4,19 +4,15 @@ package com.devsenior.jmorera.securitydemo.util;
 import java.util.Date;
 import java.util.Map;
 import java.util.function.Function;
-
 import javax.crypto.SecretKey;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 
-
-  @Component
+@Component
 public class JwtUtils {
 
     @Value("${jwt.secret}")
@@ -38,7 +34,7 @@ public class JwtUtils {
     public boolean validateToken(String token) {
         // Verificar si el token está firmado correctamente
         // Verificar si el token no ha expirado
-        var exp = extractClaim(token, Claims::getExpiration);
+        var exp = extractClaim(token, (claims) -> claims.getExpiration());
         if(exp.before(new Date())){
             return false;
         }
@@ -50,7 +46,7 @@ public class JwtUtils {
         var claims = Jwts.parser()
                 .verifyWith(getSignInKey())
                 .build()
-                .parseUnsecuredClaims(token)
+                .parseSignedClaims(token)
                 .getPayload();
 
         return claimsResolver.apply(claims);
@@ -60,9 +56,4 @@ public class JwtUtils {
         var keyBytes = Decoders.BASE64.decode(secret);
         return Keys.hmacShaKeyFor(keyBytes);
     }
-
 }
-
-    
-
-   
