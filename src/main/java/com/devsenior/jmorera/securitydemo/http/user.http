@@ -1,21 +1,21 @@
 ###
 GET http://localhost:8080/api/users
-Authorization: Bearer JWT
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqc21vcmVyYSIsImlhdCI6MTc3MTAzNzM0OSwiZXhwIjoxNzcxMTIzNzQ5LCJoaXJlX2RhdGUiOiIyMDI2MDIxMyIsIm5hbWUiOiJKb2huIEEgTW9yZXJhIiwiZW1haWwiOiJqb2hubUBlbWFpbC5jb20iLCJyb2xlcyI6WyJhZG1pbiJdfQ.hZaf8QRAN1OZ2YTwGbg3VLtSH0Hr5BiZLbk_s09n-os
 ###
 POST http://localhost:8080/api/users
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqc21vcmVyYSIsImlhdCI6MTc3MTAzNzM0OSwiZXhwIjoxNzcxMTIzNzQ5LCJoaXJlX2RhdGUiOiIyMDI2MDIxMyIsIm5hbWUiOiJKb2huIEEgTW9yZXJhIiwiZW1haWwiOiJqb2hubUBlbWFpbC5jb20iLCJyb2xlcyI6WyJhZG1pbiJdfQ.hZaf8QRAN1OZ2YTwGbg3VLtSH0Hr5BiZLbk_s09n-os
 
-{
-    "username": "amorera",
-    "password": "amorera12345",
-    "email": "a@email.com",
-    "name": "John Morera",
+{   "username": "Ybarrera",
+    "password": "yolanda12345",
+    "email": "yolanda@email.com",
+    "name": "yolanda barrera",
     "roles":[
         "admin",
         "user"
-    ]
+        ]
 }
+   
 
 ###
 PUT http://localhost:8080/api/users/jmorera

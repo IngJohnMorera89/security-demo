@@ -49,7 +49,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                             var result = new ArrayList<SimpleGrantedAuthority>();
                             var info = claims.get("roles", List.class);
                             for (var item : info) {
-                                result.add(new SimpleGrantedAuthority("ROLE_" + item.toString()));
+                                result.add(new SimpleGrantedAuthority( item.toString()));
                             }
                             return result;
                          });

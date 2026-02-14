@@ -3,10 +3,10 @@ POST http://localhost:8080/auth/register
 Content-Type: application/json
 
 {
-    "username": "fbarrera",
-    "password" : "fredy123",
-    "email": "fredy@email.com",
-    "name": "Fredy Barrera"
+    "username": "jsmorera",
+    "password" : "j12345",
+    "email": "johnm@email.com",
+    "name": "John A Morera"
 }
 
 ###
@@ -14,7 +14,7 @@ POST http://localhost:8080/auth/login
 Content-Type: application/json
 
 {
-    "username": "Jamorera",
-    "password" : "jmorera12345"
+    "username": "jsmorera",
+    "password" : "j12345"
    
 }

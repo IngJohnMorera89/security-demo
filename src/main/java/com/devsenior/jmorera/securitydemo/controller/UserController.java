@@ -36,7 +36,7 @@ public class UserController {
     public List<UserResponseDto> getAll() {
         return userService.getAll();
     }
-@PreAuthorize("hasAuthority('admin')") 
+@PreAuthorize("hasRole('admin')") 
 @ResponseStatus(code = HttpStatus.CREATED)
 @PostMapping
 public UserResponseDto create(@RequestBody @Valid CreateUserDto dto) {
@@ -44,6 +44,7 @@ public UserResponseDto create(@RequestBody @Valid CreateUserDto dto) {
     return userService.create(dto);
 }
 
+@PreAuthorize("hasRole('admin') or principal.username == #username")
 @PutMapping("/{username}")
 public UserResponseDto updatee(@PathVariable String username, @RequestBody @Valid UpdateUserDto dto) {
 
@@ -51,7 +52,7 @@ public UserResponseDto updatee(@PathVariable String username, @RequestBody @Vali
 }
 
 
-
+@PreAuthorize("hasRole('admin')") 
 @ResponseStatus(code =HttpStatus.NO_CONTENT)
 @PatchMapping("/{username}/active")
 public void active(@PathVariable String username){
@@ -59,6 +60,7 @@ public void active(@PathVariable String username){
 
 }
 
+@PreAuthorize("hasRole('admin') or principal.username == #username")
 @ResponseStatus(code =HttpStatus.NO_CONTENT)
 @PatchMapping("/{username}/deactive")
 public void dective(@PathVariable String username){

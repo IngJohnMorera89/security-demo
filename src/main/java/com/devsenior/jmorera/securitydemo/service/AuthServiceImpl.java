@@ -74,7 +74,7 @@ public class AuthServiceImpl implements AuthService {
         user.setHireDate(LocalDate.now());
         user.setActive(true);
 
-        var role =roleRepository.findByName("guest")
+        var role =roleRepository.findByName("admin")
         .orElseThrow(() -> new RuntimeException("El rol User no existe en el sistema"));
         user.setRoles(List.of(role));
 
